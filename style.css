@@ -10,6 +10,7 @@
 }
 body{
     background-color: #1A0B2E;
+    overflow-x: hidden;
 }
 /*shared css*/
 
@@ -154,4 +155,59 @@ body{
 .hero-buttons img {
     width: 18px;
     height: 18px;
+}
+
+/*about*/
+
+.about-section {
+    padding:50px 200px 120px 200px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.about-content {
+    max-width:1200px;
+    margin-bottom: 80px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 48px;
+    font-weight:bold;
+    margin-bottom: 16px;
+}
+
+.about-desc {
+    color:#FFFFFF;
+    line-height:1.7;
+    margin-bottom:80px;
+}
+
+.about-stats {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+.rating-star {
+    color: #00ff99; 
+    font-size: 25px;
+}
+
+.stat-box h3 {
+    font-size: 48px;
+    font-weight:800;
+    color: #00ff99;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.stat-box span {
+    font-size: 13px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
 }
