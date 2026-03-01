@@ -553,7 +553,7 @@ body{
     }
     /*about*/
     .about-stats{
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     .about-section {
     padding:40px 20px;
