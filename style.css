@@ -28,6 +28,8 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 16px 200px;
+    z-index: 1000; 
+    position: relative;
 }
 
 .logo {
@@ -68,6 +70,18 @@ body{
     color: #FFFFFF;
     background: linear-gradient(to right, #F7E93F, #FB09B4, #9100F8);
 }
+/*hamburger*/
+.menu-toggle{
+    display: none;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.hamburger img{
+    width:20px;
+}
+
 /*banner*/
 .hero-container{
     height: 100vh;
@@ -105,6 +119,9 @@ body{
     animation: slide 1s ease forwards;
     animation-delay: 0.8s;
 }
+
+/* i have tried to do a simple animation with badge */
+
 @keyframes slide{
     0% {
         top: -50px;
@@ -200,10 +217,11 @@ body{
     margin-bottom:80px;
 }
 
-.about-stats {
+.about-stats{
+    width:100%;
     margin-top: 80px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 80px;
 }
 .rating-star {
@@ -252,7 +270,7 @@ body{
     gap: 30px;
 }
 .why-card {
-   background: #2a1742;
+    background: #2a1742;
     padding:40px;
     border-radius: 40px;
     transition: 0.3s;
@@ -434,8 +452,8 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height:400px;
-    width:1400px;
+    height:auto;
+    width:100%;
     color:#FFFFFF;
 }
 .footer-logo {
@@ -480,3 +498,169 @@ body{
 .copyright i{
     font-size: 14px;
 }
+
+/*Responsive css */
+
+@media screen and (max-width:576px){
+    /*navbar*/
+    .navbar{
+        padding: 16px 20px;
+    }
+    .hamburger{
+        display: block;
+    }
+    .nav-links,
+    .subscribe-btn{
+        display: none;
+    }
+    .menu-toggle:checked ~ .nav-links{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top:80px;
+        right:0;
+        width: 50%;
+        height:280px;
+        background: #2a1742;
+        padding:40px 30px 40px 0px;
+        text-align: center;
+    }
+    .menu-toggle:checked ~ .subscribe-btn{
+        display: block;
+        position: absolute;
+        top: 250px;
+        left:60%;
+    }
+
+
+    /*banner*/
+    .hero-image{
+    width:200px;
+    height:200px;
+    }
+    .speaker-image{
+    width:50px;
+    }
+    .badge {
+    font-size: 16px;
+    }
+    .hero-title{
+    font-size:50px;
+    }
+    .hero-buttons a {
+    padding:8px 15px;
+    }
+    /*about*/
+    .about-stats{
+        grid-template-columns: 1fr;
+    }
+    .about-section {
+    padding:40px 20px;
+    }
+    .about-section h2 {
+    font-size:40px;
+    }
+    /*why*/
+    .why-title {
+    font-size: 40px;
+    }
+    .why-grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .large-card {
+    grid-row: span 1;
+    }
+    .wide-card {
+    grid-column: span 1;
+    }
+    .why-section {
+    padding:40px 20px;
+    }
+    /*episode*/
+    .featured-episode h2 {
+    font-size: 40px;
+    }
+    .episodes-grid {
+    grid-template-columns: repeat(1,1fr);
+    }
+    .episode-section{
+    padding:40px 20px;
+    }
+    /*host*/
+    .meet-host h2 {
+    font-size:40px;
+    }
+    .host-card {
+    flex-direction: column;
+    text-align: center;
+    }
+    .social-icons {
+    justify-content: center;
+    align-items: center;
+    }
+    /*footer*/
+    .icon-row {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:15px;
+    margin-left:60px;
+    }
+    .footer{
+        padding:20px;
+    }
+    .footer-logo{
+        font-size:30px;
+    }
+    .footer-link {
+    font-size: 14px;
+    }
+    .footer-link:hover {
+    font-size: 16px;
+    }
+    .copyright{
+        font-size:12px ;
+    }
+    .copyright i{
+        font-size: 12px;
+    }
+
+}
+@media screen and (min-width:577px) and (max-width:992px){
+    /*navbar*/
+    .navbar {
+    padding: 16px 40px;
+    }
+
+    /*about*/
+    .about-stats{
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .about-section {
+    padding:60px 80px;
+    }
+    /*why*/
+    .why-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .wide-card{
+        grid-column: span 1;
+    }
+    .large-card {
+    grid-row: span 1;
+    }
+    .why-section {
+    padding:40px 20px;
+    }
+    /*episode*/
+    .episodes-grid {
+    grid-template-columns: repeat(2,1fr);
+    }
+    .episode-section{
+    padding:40px 20px;
+    }
+    /*footer*/
+    .footer-logo{
+        font-size:40px;
+    }
+}    
